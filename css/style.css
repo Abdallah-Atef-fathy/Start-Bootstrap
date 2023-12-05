@@ -1,0 +1,541 @@
+/* Start Basices */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #1abc9c;
+    --secondry-color: #2c3e50;
+    --footer-color: #1a252f;
+    --body-color: #ffffff;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.continar {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 30px;
+    color: var(--body-color);
+    transition: .4s;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header {
+    width: 100%;
+    height: calc(100vh - 150px);
+    position: relative;
+    background-color: #1abc9c;
+}
+
+/* End Basices */
+/* Start Nav */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondry-color);
+    color: #ffffff;
+    padding: 10px 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition-property: transform;
+    transition: transform 0.5s ease-in-out;
+    transition-timing-function: 2s;
+}
+
+header nav .links {
+    display: flex;
+    align-items: center;
+}
+
+header nav .links ul {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    header nav .links ul {
+        display: none;
+    }
+
+    header nav .links:hover ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        text-align: center;
+        height: 100px;
+        background-color: var(--secondry-color);
+        width: 100%;
+    }
+
+    header nav {
+        padding: 25px 10px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+
+    header nav .logo h1 {
+        font-size: 20px;
+        width: auto;
+    }
+}
+
+header nav .links ul a:hover {
+    color: var(--main-color);
+}
+
+header nav .links i {
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 130px;
+}
+
+@media (min-width:767px) {
+    header nav .links i {
+        display: none;
+    }
+
+    header nav .logo h1:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes logo {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 315px;
+        }
+    }
+
+    header nav .logo h1 {
+        font-size: 32px;
+        font-weight: bold;
+        animation: logo 2s .5s both alternate steps(15);
+        width: fit-content;
+        width: 0px;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+}
+
+/* End Nav */
+/* Start Landing */
+header .landing {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+header .landing .logo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 1px 6px 10px 4px var(--secondry-color);
+}
+
+header .landing .title h2 {
+    margin-top: 30px;
+    font-size: 65px;
+    color: var(--body-color);
+}
+
+@media (max-width:768px) {
+    header .landing .title h2 {
+        font-size: 32px;
+    }
+}
+
+header .landing .icone i {
+    padding: 20px 10px;
+    font-size: 30px;
+    color: var(--body-color);
+}
+
+header .landing .icone {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .landing .icone .one {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: var(--body-color);
+    border-radius: 1rem;
+    border-color: var(--body-color);
+}
+
+header .landing .title p {
+    margin-top: 20px;
+    color: var(--body-color);
+    font-size: 25px;
+}
+
+/* End Landing */
+/* Start Portfolio */
+#Portfolio {
+    padding: 6rem 0;
+}
+
+#Portfolio .title {
+    text-align: center;
+    align-items: center;
+}
+
+#Portfolio .title h2 {
+    margin-top: 30px;
+    font-size: 50px;
+    color: var(--secondry-color);
+}
+
+#Portfolio .icone i {
+    padding: 20px 10px;
+    font-size: 30px;
+    color: var(--secondry-color);
+}
+
+#Portfolio .icone {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Portfolio .icone .one {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: var(--secondry-color);
+    border-radius: 1rem;
+    border-color: var(--secondry-color);
+}
+
+#Portfolio .imges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#Portfolio .imges .col {
+    width: 350px;
+    height: 252px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: 5s;
+}
+
+#Portfolio .imges .col:hover::after {
+    content: "+";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+    opacity: 90%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 100px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#Portfolio .imges .col img {
+    width: 350px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* End Portfolio */
+/* Start About */
+#About {
+    padding: 6rem 0;
+    background-color: var(--main-color);
+    color: var(--body-color);
+    text-align: center;
+}
+
+#About .title h2 {
+    margin-top: 30px;
+    font-size: 50px;
+    color: var(--body-color);
+}
+
+#About .icone i {
+    padding: 20px 10px;
+    font-size: 30px;
+    color: var(--body-color);
+}
+
+#About .icone {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#About .icone .one {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: var(--body-color);
+    border-radius: 1rem;
+    border-color: var(--body-color);
+}
+
+#About .continar .discrbtion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+#About .continar .discrbtion p {
+    font-size: 21px;
+    padding: 0 30px;
+    font-weight: normal;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+@media (max-width:768px) {
+    #About .continar .discrbtion {
+        flex-direction: column;
+    }
+}
+
+#About .continar button {
+    padding: 20px 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--body-color);
+    font-size: 23px;
+    border: 1px solid var(--body-color);
+    margin-top: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#About .continar button:hover {
+    color: var(--secondry-color);
+    background-color: var(--body-color);
+}
+
+#About .continar button i {
+    padding: 0 10px;
+}
+
+/* End About */
+/* Start Contact */
+#Contact {
+    padding: 6rem 0;
+    background-color: var(--body-color);
+    text-align: center;
+}
+
+@media (max-width:768px) {
+    #Contact {
+        width: 100%;
+    }
+
+    #Contact .title h2 {
+        font-size: 30px;
+    }
+
+    #Contact .register form input {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    #Contact .register form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#Contact .title h2 {
+    margin-top: 30px;
+    font-size: 50px;
+    color: var(--secondry-color);
+    text-align: center;
+}
+
+#Contact .icone i {
+    padding: 20px 10px;
+    font-size: 30px;
+    color: var(--secondry-color);
+}
+
+#Contact .icone {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Contact .icone .one {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: var(--secondry-color);
+    border-radius: 1rem;
+    border-color: var(--secondry-color);
+}
+
+#Contact .register form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#Contact .register form input {
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(136, 134, 134);
+    font-size: 22px;
+    width: 600px;
+}
+
+#Contact .register form textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(136, 134, 134);
+    font-size: 22px;
+    margin: 10px 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#Contact .register form button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin-top: 40px;
+    background-color: var(--main-color);
+    border-radius: 8px;
+    color: var(--body-color);
+    cursor: pointer;
+    transition: .5s;
+}
+
+#Contact .register form button:hover {
+    background-color: transparent;
+    color: var(--secondry-color);
+    border: 1px solid var(--secondry-color);
+}
+
+/* End Contact */
+/* Start Footer */
+footer {
+    padding: 6rem 0;
+    background-color: var(--secondry-color);
+    color: var(--body-color);
+}
+
+footer .end {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .end .links i {
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--body-color);
+    transition: .5s;
+    cursor: pointer;
+}
+
+footer .end .links i:hover {
+    background-color: var(--body-color);
+    color: var(--secondry-color);
+}
+
+footer .end .location p {
+    line-height: 1.6;
+}
+
+footer .end .about p {
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+footer .end .about span {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* End Footer */
+.copy {
+    background-color: var(--footer-color);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.copy p {
+    font-size: 14px;
+}
+
+.copy span {
+    color: var(--main-color);
+    cursor: pointer;
+    font-size: 18px;
+}
